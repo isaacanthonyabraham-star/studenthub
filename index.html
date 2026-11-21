@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudentHub helps students organise courses, timetables, assignments, and academic resources.">
+  <title>StudentHub — Your semester, organised</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="StudentHub home">
+        <span class="brand-mark">S</span>
+        <span>student<span class="brand-light">hub</span></span>
+      </a>
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-link" href="#timetable"><span>▤</span> Timetable</a>
+        <a class="nav-link" href="#assignments"><span>✓</span> Assignments</a>
+        <a class="nav-link" href="#courses"><span>▣</span> My courses</a>
+        <a class="nav-link" href="#resources"><span>▧</span> Resources</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="semester-card">
+          <span class="semester-dot"></span>
+          <div><strong>Current semester</strong><small>Semester 1 · 2026/27</small></div>
+        </div>
+        <div class="profile">
+          <div class="avatar">ST</div>
+          <div><strong>Student account</strong><small>Workspace preview</small></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> Overview</div>
+        <div class="topbar-right"><span class="status-pill"><i></i> Semester in progress</span><div class="avatar small">ST</div></div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow" id="todayLabel">YOUR ACADEMIC SPACE</p>
+          <h1>Stay on top of your semester.</h1>
+          <p class="muted">A clearer view of what you need to learn, do, and finish.</p>
+        </div>
+        <a class="primary-button" href="#assignments">View assignments <span>↗</span></a>
+      </section>
+
+      <section class="stats-grid" aria-label="Academic overview">
+        <article class="stat-card"><div class="stat-top"><span>Active courses</span><span class="stat-icon violet">▣</span></div><strong>06</strong><small>Courses this semester</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Pending tasks</span><span class="stat-icon orange">◷</span></div><strong id="pendingCount">03</strong><small>Keep your deadlines close</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Completed</span><span class="stat-icon green">✓</span></div><strong id="completedCount">02</strong><small>Tasks completed</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Next class</span><span class="stat-icon blue">⌁</span></div><strong class="stat-word">10:00 AM</strong><small>Design Fundamentals</small></article>
+      </section>
+
+      <div class="content-grid">
+        <section class="panel assignments-panel" id="assignments">
+          <div class="panel-heading"><div><p class="eyebrow">KEEP MOVING</p><h2>Assignments & tasks</h2></div><button class="text-button" id="addTaskButton">＋ Add task</button></div>
+          <div class="task-list" id="taskList">
+            <label class="task-row"><input type="checkbox"><span class="task-check"></span><span class="task-copy"><strong>Research precedent study</strong><small>Design Fundamentals · Due Nov 24</small></span><span class="priority high">High</span></label>
+            <label class="task-row"><input type="checkbox"><span class="task-check"></span><span class="task-copy"><strong>Complete mathematics exercises</strong><small>Mathematics · Due Nov 26</small></span><span class="priority medium">Medium</span></label>
+            <label class="task-row"><input type="checkbox"><span class="task-check"></span><span class="task-copy"><strong>Review lecture notes</strong><small>Building Technology · Due Nov 28</small></span><span class="priority low">Low</span></label>
+            <label class="task-row completed"><input type="checkbox" checked><span class="task-check"></span><span class="task-copy"><strong>Submit studio sketches</strong><small>Studio Practice · Completed</small></span><span class="priority done">Done</span></label>
+            <label class="task-row completed"><input type="checkbox" checked><span class="task-check"></span><span class="task-copy"><strong>Read course outline</strong><small>Design Fundamentals · Completed</small></span><span class="priority done">Done</span></label>
+          </div>
+          <p class="helper-text">Demo tasks are stored in this browser session only.</p>
+        </section>
+
+        <section class="panel timetable-panel" id="timetable">
+          <div class="panel-heading"><div><p class="eyebrow">PLAN AHEAD</p><h2>Today's timetable</h2></div><span class="date-chip">MON · 23 NOV</span></div>
+          <div class="schedule">
+            <div class="schedule-row"><time>08:00</time><span class="timeline"></span><div class="class-card purple"><strong>Design Fundamentals</strong><small>Studio 02 · 2 hours</small></div></div>
+            <div class="schedule-row"><time>10:00</time><span class="timeline"></span><div class="class-card blue-class"><strong>Mathematics</strong><small>Lecture Hall B · 1 hour</small></div></div>
+            <div class="schedule-row"><time>13:00</time><span class="timeline"></span><div class="class-card green-class"><strong>Building Technology</strong><small>Room 14 · 2 hours</small></div></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel courses-panel" id="courses">
+        <div class="panel-heading"><div><p class="eyebrow">YOUR LEARNING</p><h2>My courses</h2></div><a class="text-button" href="#courses">View all <span>→</span></a></div>
+        <div class="course-grid">
+          <article class="course-card"><span class="course-symbol purple">A</span><div><strong>Design Fundamentals</strong><small>ARC 101 · 3 units</small></div><span class="course-arrow">↗</span></article>
+          <article class="course-card"><span class="course-symbol orange">M</span><div><strong>Mathematics</strong><small>MTH 105 · 2 units</small></div><span class="course-arrow">↗</span></article>
+          <article class="course-card"><span class="course-symbol green">B</span><div><strong>Building Technology</strong><small>BLD 101 · 2 units</small></div><span class="course-arrow">↗</span></article>
+        </div>
+      </section>
+      <footer id="resources"><span>StudentHub <span class="footer-dot">·</span> Built for students</span><span>Early MVP preview</span></footer>
+    </main>
+  </div>
+
+  <dialog class="task-dialog" id="taskDialog">
+    <form method="dialog" id="taskForm">
+      <div class="dialog-heading"><div><p class="eyebrow">STAY ORGANISED</p><h2>Add a task</h2></div><button class="close-button" value="cancel" aria-label="Close">×</button></div>
+      <label for="taskTitle">Task title</label>
+      <input id="taskTitle" name="title" maxlength="80" placeholder="e.g. Prepare studio presentation" required>
+      <label for="taskCourse">Course or category</label>
+      <input id="taskCourse" name="course" maxlength="50" placeholder="e.g. Design Fundamentals">
+      <label for="taskDue">Due date</label>
+      <input id="taskDue" name="due" type="date">
+      <button class="primary-button submit-button" type="submit">Save task</button>
+    </form>
+  </dialog>
+</body>
+</html>
